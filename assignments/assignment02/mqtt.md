@@ -6,34 +6,34 @@ Observe how message delivery changes based on QoS settings.
 ## Publisher_qos.py output
 
 ```
-[15:36:33] DEBUG | Sending PUBLISH (d0, q1, r0, m365), 'b'test/qos/6510301046/temperature'', ... (5 bytes)
-[15:36:33] PUBLISH REQUESTED | SID=6510301046 | temperature=27.75 | QoS=1 | msgid=365
-[15:36:33] DEBUG | Sending PUBLISH (d0, q1, r0, m366), 'b'test/qos/6510301046/humidity'', ... (5 bytes)
-[15:36:33] PUBLISH REQUESTED | SID=6510301046 | humidity=41.61 | QoS=1 | msgid=366
-[15:36:33] DEBUG | Sending PUBLISH (d0, q1, r0, m367), 'b'test/qos/6510301046/pressure'', ... (7 bytes)
-[15:36:33] PUBLISH REQUESTED | SID=6510301046 | pressure=1016.92 | QoS=1 | msgid=367
-[15:36:33] DEBUG | Sending PUBLISH (d0, q1, r0, m368), 'b'test/qos/6510301046/fan_speed'', ... (1 bytes)
-[15:36:33] PUBLISH REQUESTED | SID=6510301046 | fan_speed=3 | QoS=1 | msgid=368
-[15:36:33] DEBUG | Received PUBACK (Mid: 365)
-[15:36:33] PUBLISHED | msgid=365
-[15:36:33] DEBUG | Received PUBACK (Mid: 366)
-[15:36:33] PUBLISHED | msgid=366
-[15:36:33] DEBUG | Received PUBACK (Mid: 367)
-[15:36:33] PUBLISHED | msgid=367
-[15:36:33] DEBUG | Received PUBACK (Mid: 368)
-[15:36:33] PUBLISHED | msgid=368
+:\Users\thana\Desktop\My_Work\IOT\Iot-class-2025-gateway\app\publisher_qos.py:20: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  client = mqtt.Client()
+[16:01:06] DEBUG | Sending CONNECT (u0, p0, wr0, wq0, wf0, c1, k60) client_id=b''
+Enter message to publish: [16:01:06] DEBUG | Received CONNACK (0, 0)
+yipeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+Enter QoS level (0, 1, 2): 2
+[16:01:12] DEBUG | Sending PUBLISH (d0, q2, r0, m1), 'b'test/qos/6510301046'', ... (60 bytes)
+[16:01:12] PUBLISH REQUESTED | QoS=2 | Message='yipeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee' | msgid=1      
+Enter message to publish: [16:01:12] DEBUG | Received PUBREC (Mid: 1)
+[16:01:12] DEBUG | Sending PUBREL (Mid: 1)
+[16:01:12] DEBUG | Received PUBCOMP (Mid: 1)
+[16:01:12] PUBLISHED | msgid=1
+
 ```
 
 ## Subscriber_qos.py Output
 
 ```
-[15:36:33] DEBUG | Received PUBLISH (d0, q1, r0, m320), 'test/qos/6510301046/humidity', ...  (5 bytes)
-[15:36:33] RECEIVED | humidity: 41.61 | QoS=1
-[15:36:33] DEBUG | Sending PUBACK (Mid: 320)
-[15:36:33] DEBUG | Received PUBLISH (d0, q1, r0, m321), 'test/qos/6510301046/pressure', ...  (7 bytes)
-[15:36:33] RECEIVED | pressure: 1016.92 | QoS=1
-[15:36:33] DEBUG | Sending PUBACK (Mid: 321)
-[15:36:33] DEBUG | Received PUBLISH (d0, q1, r0, m322), 'test/qos/6510301046/fan_speed', ...  (1 bytes)
-[15:36:33] RECEIVED | fan_speed: 3 | QoS=1
-[15:36:33] DEBUG | Sending PUBACK (Mid: 322)
+c:\Users\thana\Desktop\My_Work\IOT\Iot-class-2025-gateway\app\subscriber_qos.py:25: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  client = mqtt.Client()
+[16:00:35] DEBUG | Sending CONNECT (u0, p0, wr0, wq0, wf0, c1, k60) client_id=b''
+[16:00:35] DEBUG | Received CONNACK (0, 0)
+[16:00:35] Connected with result code 0
+[16:00:35] DEBUG | Sending SUBSCRIBE (d0, m1) [(b'test/qos/6510301046', 2)]
+[16:00:35] DEBUG | Received SUBACK
+[16:01:12] DEBUG | Received PUBLISH (d0, q2, r0, m1), 'test/qos/6510301046', ...  (60 bytes)
+[16:01:12] DEBUG | Sending PUBREC (Mid: 1)
+[16:01:12] DEBUG | Received PUBREL (Mid: 1)
+[16:01:12] RECEIVED | QoS=2 | Topic=test/qos/6510301046 | Message=yipeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee | msgid=1
+[16:01:12] DEBUG | Sending PUBCOMP (Mid: 1)
 ```
