@@ -2,7 +2,7 @@
 
 This architecture shows the data flow and monitoring setup of an IoT system using MQTT, Prometheus, and Grafana. It consists of **two main parts**: data publishing from sensors and system monitoring through metrics.
 
----
+
 ![MLIoT](./assets/images/mqtt-visualization.png)
 
 ## 🧱 **Component Descriptions**
@@ -74,9 +74,9 @@ This architecture shows the data flow and monitoring setup of an IoT system usin
 
 | Component      | Value                                                            |
 | -------------- | ---------------------------------------------------------------- |
-| Gateway IP     | \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ |
-| MQTT Broker IP | \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ |
-| VerneMQ URL    | \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ |
-| Prometheus URL | \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ |
-| Grafana URL    | \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ |
+| Gateway IP     | 172.30.15.79 |
+| MQTT Broker IP | 172.30.15.47 |
+| VerneMQ URL    | 172.30.15.47:1883 |
+| Prometheus URL | 172.30.15.47:9090 |
+| Grafana URL    | 172.30.15.47:3000 |
 

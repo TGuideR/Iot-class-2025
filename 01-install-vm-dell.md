@@ -8,16 +8,16 @@
 
 | Title                  | Value                                               |
 | -----------------------| --------------------------------------------------- |
-| Full Name              | \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_|
-| Student ID              | \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\__ |
-| Installation Date      | \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\\_\_\_\_ |
+| Full Name              | Thanakorn Rakkam|
+| Student ID              | 6510301046|
+| Installation Date      | 11/06/2025|
 
 
 ---
 
 ## 🖥️ Device Information
 
-- 💻 **Device Model / Type**: ___________________________
+- 💻 **Device Model / Type**: DELL Edge Gateway 5000
 - 🧬 **Firmware Type**:  
   - [ ] UEFI  
   - [x] BIOS  
@@ -29,11 +29,15 @@
 
 ## 🗂️ Custom Partitioning
 
-| Partition     | Size   | Filesystem | Mount Point           | Notes              |
-|---------------|--------|------------|------------------------|--------------------|
-| `/boot`       | 512MB  | ext4       | `/boot`                | For boot loader    |
-| `swap`        | 1GB    | swap       | -                      | Swap space         |
-| `/` or others |        |            |                        |                    |
+| Partition      | Size   | Filesystem | Mount Point         | Notes                      |
+|----------------|--------|------------|----------------------|----------------------------|
+| `/dev/sda1`     | 29GB   | ext4       | `/`                  | Root filesystem            |
+| `udev`          | 1.9GB  | tmpfs      | `/dev`               | Device files               |
+| `tmpfs`         | 379MB  | tmpfs      | `/run`               | Runtime data               |
+| `tmpfs`         | 1.9GB  | tmpfs      | `/dev/shm`           | Shared memory              |
+| `tmpfs`         | 5MB    | tmpfs      | `/run/lock`          | Lock files                 |
+| `tmpfs`         | 379MB  | tmpfs      | `/run/user/1000`     | User-specific runtime data |
+
 
 ---
 
@@ -41,23 +45,23 @@
 
 | Title                   | Value                                               |
 | ------------------------| --------------------------------------------------- |
-| Network Interface Name  | \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\     |
-| IP Address              | \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\__ |
-| Netmask                 | \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\\_\_\_\_ |
-| Gateway                 | \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\\_\_\_\_ |
-| DNS                     | \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\\_\_\_\_ |
+| Network Interface Name  | enp1|
+| IP Address              | 172.30.15.47|
+| Netmask                 | 255.255.255.0|s0
+| Gateway                 | 172.30.15.254|
+| DNS                     | 172.16.46.254|
 
 ---
 
 ## 🖧 Hostname
 
-- 🖥️ **Hostname Set**: ___________________________
+- 🖥️ **Hostname Set**: FDT6510301046
 
 ---
 
 ## 👤 User Account
 
-- 👨‍💻 **Username Created**: ___________________________
+- 👨‍💻 **Username Created**: Thanakorn
 - 🔐 **Is a Root Password Set?**:  
   - [X] Yes  
   - [ ] No
